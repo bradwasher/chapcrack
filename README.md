@@ -9,3 +9,26 @@ Additionally, this script requires that the hashed password be captured as it is
 Example: username=user1&password= dba5fe239907280fad8a5ba4167fc55f &dst=&popup=true
 
 Using the salt values and a password list, hashes are generated and then compared to the collected hashes.  If a match is found, then the password used to generate the hash is valid.
+
+************************************************************************************************************************************************************
+
+
+Mikrotiks used the md5.js javascript module to generate hashes
+Example from PCAP:
+
+    <script src="/md5.js"></script>
+    <script>
+        function doLogin() {
+            document.sendin.username.value = document.login.username.value;
+            document.sendin.password.value = hexMD5('\013' + document.login.password.value + '\331\303\150\252\305\333\221\356\363\354\003\025\056\232\163\311');
+            document.sendin.submit();
+            return false;
+        }
+    </script>
+    
+This equates to:
+hexMD5('\013user1\331\303\150\252\305\333\221\356\363\354\003\025\056\232\163\311')
+
+If the username and password typed in by the user were 'user1' and 'user1' then the values posted would be: 
+
+username=user1&password=dba5fe239907280fad8a5ba4167fc55f&dst=&popup=true
