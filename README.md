@@ -1,4 +1,4 @@
-# chappie
+# CHAP Crack
 This program uses a word list to attempt to discover the password of Mikrotik hotspot users when CHAP is enabled.
 
 It requires that login page from the Mikrotik device be captured as it is transmitted to the hotspot user.
