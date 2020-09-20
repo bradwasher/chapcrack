@@ -3,6 +3,7 @@ This program uses a word list to attempt to discover the password of Mikrotik ho
 
 It requires that login page from the Mikrotik device be captured as it is transmitted to the hotspot user.
 This login page contains javascript code that includes salt values that are hashed in conjunction with the user's password to authenticate with the Mikrotik hotspot.
+
 Example: document.sendin.password.value = hexMD5('\013' + document.login.password.value + '\331\303\150\252\305\333\221\356\363\354\003\025\056\232\163\311')
 
 Additionally, this script requires that the hashed password be captured as it is posted to the Mikrotik device.
@@ -13,7 +14,7 @@ Using the salt values and a password list, hashes are generated and then compare
 ************************************************************************************************************************************************************
 
 
-Mikrotiks used the md5.js javascript module to generate hashes
+Mikrotiks use the md5.js javascript module to generate hashes
 Example from PCAP:
 
     <script src="/md5.js"></script>
